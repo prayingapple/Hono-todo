@@ -1,13 +1,16 @@
 import type { FC } from 'hono/jsx'
 
 type Props = {
-  text: integer;
+  text: number;
 };
 
 const Footer: FC<Props> = (props) => {
   return (
-    <footer>
-        <div>@{props.text} Tomo Kimura</div>
+    <footer className="mt-10 text-white">
+      <hr/>
+      <p className="mt-4 font-medium text-pretty text-gray-300 sm:text-sm">
+        @{props.text} Tomo Kimura
+      </p>
     </footer>
   )
 };

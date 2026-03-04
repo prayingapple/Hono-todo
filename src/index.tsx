@@ -16,7 +16,7 @@ app.use('*', async (c, next) => {
     return c.html(
       <html lang="ja">
         <head></head>
-        <body>
+        <body className="m-10 bg-sky-950">
           <Headers />
           {content}
           <Footers />
@@ -33,8 +33,10 @@ app.get('/', (c) => {
     <>
       <title>トップページ</title>
       <meta name='description' content='トップページ' />
-      <h1>Hello Hono!</h1>
-      <h2>ようこそ Hono!</h2>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <h3 className="m-5 text-white text-3xl font-bold underline">Hello Hono!</h3>
+      <h3 className="m-5 text-xl text-white">ようこそ Hono!</h3>
       <Message text={messages}/>
     </>
   )

@@ -7,9 +7,9 @@ type Props = {
 const Message: FC<Props> = (props) => {
   return (
     <ul>
-        {props.text.map((message) => {
-          return <li>{message}!!</li>
-        })}
+      {props.text.map((message) => {
+        return <li className="text-white">{message}!!</li>
+      })}
     </ul>
   )
 };
