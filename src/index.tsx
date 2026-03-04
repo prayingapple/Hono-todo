@@ -1,14 +1,26 @@
 import { Hono } from 'hono'
+import { memo } from 'hono/jsx'
 import Message from "./message"
+import Header from "./header"
+import Footer from "./footer"
 
 const app = new Hono()
+
+const Headers = memo(() => <Header text="Hono-todo" />)
+const now = new Date();
+const year = now.getFullYear();
+const Footers = memo(() => <Footer text={year}/>)
 
 app.use('*', async (c, next) => {
   c.setRenderer((content) => {
     return c.html(
       <html lang="ja">
         <head></head>
-        <body>{content}</body>
+        <body>
+          <Headers />
+          {content}
+          <Footers />
+        </body>
       </html>
     )
   })
