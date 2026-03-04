@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import type { FC } from 'hono/jsx'
+import Message from "./message"
 
 const app = new Hono()
 
@@ -23,11 +23,7 @@ app.get('/', (c) => {
       <meta name='description' content='トップページ' />
       <h1>Hello Hono!</h1>
       <h2>ようこそ Hono!</h2>
-      <ul>
-        {messages.map((message) => {
-          return <li>{message}!!</li>
-        })}
-      </ul>
+      <Message text={messages}/>
     </>
   )
 })
