@@ -9,7 +9,7 @@ const Footer: FC<Props> = (props) => {
     <footer className="mt-10 text-white">
       <hr/>
       <p className="mt-4 font-medium text-pretty text-gray-300 sm:text-sm">
-        @{props.text} Tomo Kimura
+        (c) {props.text} Tomo Kimura
       </p>
     </footer>
   )
